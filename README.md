@@ -1,12 +1,31 @@
 # Flipeoo
 
-An interactive React application built with Vite and Framer Motion.
+[![Deploy](https://github.com/jarrydz/fliperoo/actions/workflows/deploy.yml/badge.svg)](https://github.com/jarrydz/fliperoo/actions/workflows/deploy.yml)
 
-## Live Demo
+A two-player memory matching game featuring hybrid animal cards, built with React and animated with Framer Motion.
 
-Visit the live site at: https://jarrydz.github.io/fliperoo/
+## 🎮 Live Demo
 
-## Development
+**Play now:** https://jarrydz.github.io/fliperoo/
+
+## ✨ Features
+
+- Two-player memory matching game
+- 15 unique hybrid animal cards
+- Smooth flip animations with Framer Motion
+- Player name customization
+- Real-time score tracking
+- Mobile-responsive design
+
+## 🛠️ Tech Stack
+
+- React 19
+- Vite
+- Framer Motion
+- CSS Modules
+- ESLint
+
+## 🚀 Development
 
 ```bash
 # Install dependencies
@@ -22,13 +41,6 @@ npm run build
 npm run preview
 ```
 
-## Tech Stack
+## 📝 License
 
-- React 19
-- Vite
-- Framer Motion
-- ESLint
-
-## License
-
-MIT
+MIT © 2026 Jarryd Zankovic
