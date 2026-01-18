@@ -1,0 +1,275 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+  padding: 1rem;
+  gap: 0.75rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  text-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Difficulty Section */
+.difficultySection {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficultyOptions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.difficultyBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 120px;
+}
+
+.difficultyBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.difficultyBtn.selectedDifficulty {
+  background: linear-gradient(135deg, rgba(72, 219, 251, 0.3), rgba(255, 159, 243, 0.3));
+  border-color: #48dbfb;
+  box-shadow: 0 0 20px rgba(72, 219, 251, 0.3);
+}
+
+.difficultyName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.difficultyDesc {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.playersContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+.playerCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.25rem;
+  flex: 1;
+  min-width: 260px;
+  max-width: 380px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.playerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border-color: #feca57;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(254, 202, 87, 0.3);
+}
+
+.characters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.characterBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.characterBtn:hover:not(.disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.characterBtn.selected {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(254, 202, 87, 0.3));
+  border-color: #feca57;
+  box-shadow: 0 0 20px rgba(254, 202, 87, 0.4);
+}
+
+.characterBtn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.characterEmoji {
+  font-size: 1.75rem;
+}
+
+.characterName {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.startBtn {
+  margin-top: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  color: #1a1a2e;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.startBtn:hover:not(.startBtnDisabled) {
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.6);
+}
+
+.startBtnDisabled {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .playerCard {
+    padding: 1rem;
+    min-width: 100%;
+  }
+  
+  .characterBtn {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .characterEmoji {
+    font-size: 1.5rem;
+  }
+  
+  .characterName {
+    font-size: 0.65rem;
+  }
+  
+  .startBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .difficultyOptions {
+    flex-wrap: wrap;
+  }
+  
+  .difficultyBtn {
+    padding: 0.5rem 0.75rem;
+  }
+}

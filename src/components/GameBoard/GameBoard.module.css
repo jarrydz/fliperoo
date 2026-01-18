@@ -1,0 +1,73 @@
+.board {
+  display: grid;
+  gap: clamp(0.4rem, 1.5vw, 0.75rem);
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  min-height: 0; /* Allow shrinking */
+  max-height: 100%;
+  align-content: center;
+}
+
+/* Easy: 6 pairs = 12 cards, 4x3 grid */
+.board.easy {
+  max-width: min(500px, 90vw);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* Medium: 12 pairs = 24 cards, 6x4 grid */
+.board.medium {
+  max-width: min(700px, 95vw);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+/* Hard: 18 pairs = 36 cards, 6x6 grid */
+.board.hard {
+  max-width: min(750px, 95vw);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+@media (max-width: 600px) {
+  .board {
+    gap: 0.4rem;
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+  
+  .board.easy {
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .board.medium {
+    max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .board.hard {
+    max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .board.easy {
+    max-width: 420px;
+  }
+  
+  .board.medium {
+    max-width: 550px;
+  }
+  
+  .board.hard {
+    max-width: 600px;
+  }
+}

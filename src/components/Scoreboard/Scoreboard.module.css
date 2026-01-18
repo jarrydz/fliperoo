@@ -1,0 +1,125 @@
+.scoreboard {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+  flex-shrink: 0; /* Don't shrink the scoreboard */
+}
+
+.playerCard {
+  flex: 1;
+  max-width: 280px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.playerCard.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #feca57;
+  box-shadow: 0 0 30px rgba(254, 202, 87, 0.3);
+}
+
+.turnIndicator {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  color: #1a1a2e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.playerEmoji {
+  font-size: 1.75rem;
+}
+
+.playerName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.score {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #feca57;
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .scoreboard {
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+  
+  .playerCard {
+    max-width: 100%;
+    padding: 0.75rem 1rem;
+  }
+  
+  .playerEmoji {
+    font-size: 1.5rem;
+  }
+  
+  .playerName {
+    font-size: 0.9rem;
+  }
+  
+  .score {
+    font-size: 1.5rem;
+  }
+  
+  .turnIndicator {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    top: -10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .scoreboard {
+    max-width: 450px;
+  }
+}
